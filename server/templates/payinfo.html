@@ -1,0 +1,176 @@
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <br />
+        {{ field.label_tag }}:{{ field }}
+        {{ field.errors }}
+    {% endfor %}
+    <input type="submit">
+    <br/>
+</form>
+<div>{{ error }}</div>
+<br />
+<div>
+    {{ querytime }}
+</div>
+<br />
+{% if results %}
+<div>
+    收入汇总:<br />
+    <table border="1">
+        <tr>
+            <th>分区名</th>
+            <th>葡萄</th>
+            <th>小米</th>
+            <th>阿里</th>
+            <th>乐视</th>
+            <th>中国移动</th>
+            <th>爱游戏</th>
+            <th>ATET</th>
+            <th>沙发</th>
+            <th>当贝</th>
+            <th>分区总和</th>
+        </tr>
+    {% for detail in results %}
+        <tr>
+            <td>{{ detail.zonename }}</td>
+            <td>{{ detail.putaogameTotal }}</td>
+            <td>{{ detail.xiaomiTotal }}</td>
+            <td>{{ detail.aliTotal }}</td>
+            <td>{{ detail.letvTotal }}</td>
+            <td>{{ detail.chinamobileTotal }}</td>
+            <td>{{ detail.lovegameTotal }}</td>
+            <td>{{ detail.atetTotal }}</td>
+            <td>{{ detail.shafaTotal }}</td>
+            <td>{{ detail.dangbeiTotal }}</td>
+            <td>{{ detail.allTotal }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endif %}
+{% if results %}
+<div>
+    <p></p>
+    收入详情:<br />
+    <table border="1">
+        <tr>
+            <th>分区名</th>
+            <th>渠道名</th>
+            <th>用户id</th>
+            <th>物品id</th>
+            <th>花费RMB</th>
+        </tr>
+        {% for detail in results %}
+            {% if detail.putaogame %}
+            {% for item in detail.putaogame %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>葡萄游戏</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.xiaomi %}
+            {% for item in detail.xiaomi %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>小米</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.ali %}
+            {% for item in detail.ali %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>阿里</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.letv %}
+            {% for item in detail.letv %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>乐视</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.chinamobile %}
+            {% for item in detail.chinamobile %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>中国移动</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.lovegame %}
+            {% for item in detail.lovegame %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>爱游戏</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.atet %}
+            {% for item in detail.atet %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>ATET</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.shafa %}
+            {% for item in detail.shafa %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>沙发管家</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+            {% if detail.dangbei %}
+            {% for item in detail.dangbei %}
+            <tr>
+                <td>{{ detail.zonename }}</td>
+                <td>当贝</td>
+                <td>{{ item.1 }}</td>
+                <td>{{ item.2 }}</td>
+                <td>{{ item.3 }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+        {% endfor %}
+    </table>
+</div>
+{% endif %}

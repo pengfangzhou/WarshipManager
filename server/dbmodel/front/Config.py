@@ -1,0 +1,8 @@
+#encoding=utf-8
+DATA_USER = 'deploy'
+DATA_PASSWORD = 'asdf12345678'
+DATA_PORT = "5432"
+
+ZONE_IP = '10.171.43.37'
+ZONE_GIP = '123.57.138.29'
+ZONE_DBNAME = 'acgzone'

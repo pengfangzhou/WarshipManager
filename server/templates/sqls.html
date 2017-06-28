@@ -1,0 +1,29 @@
+<html>
+<head><meta http-equiv="content-type" content="text/html;charset=utf-8">
+    </head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+    <br/>
+</form>
+{{ error }}
+{% if resultarr %}
+<table border="1">
+{% for item in resultarr%}
+        {% if item.results %}
+        {% for dups in item.results%}
+            <tr><td>{{ item.name }}</td>
+            {% for dup in dups%}
+            <td>{{ dup }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        {% endif %}
+        <p><p/>
+{% endfor %}
+</table>
+{% endif %}
+</body>
+</html>

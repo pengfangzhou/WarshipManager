@@ -1,0 +1,43 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+    <br/>
+</form>
+{{ error }}
+{% if result %}
+    <table border="1">
+        <tr>
+            <th>用户id</th>
+            <th>唯一码</th>
+            <th>用户昵称</th>
+            <th>拥有经验</th>
+            <th>金币</th>
+            <th>钻石</th>
+            <th>功勋</th>
+            <th>vip钻石</th>
+            <th>ip</th>
+            <th>账号</th>
+            <th>大渠道</th>
+            <th>真正渠道</th>
+            <th>来源</th>
+            <th>创建时间</th>
+        </tr>
+        <tr>
+            <td>{{ result.userid }}</td>
+            <td>{{ result.authstring }}</td>
+            <td>{{ result.nickname }}</td>
+            <td>{{ result.xp }}</td>
+            <td>{{ result.gold }}</td>
+            <td>{{ result.rock }}</td>
+            <td>{{ result.feat }}</td>
+            <td>{{ result.vrock }}</td>
+            <td>{{ result.ip }}</td>
+            <td>{{ result.username }}</td>
+            <td>{{ result.channel }}</td>
+            <td>{{ result.realchannel }}</td>
+            <td>{{ result.source }}</td>
+            <td>{{ result.created }}</td>
+        </tr>
+    </table>
+{% endif %}

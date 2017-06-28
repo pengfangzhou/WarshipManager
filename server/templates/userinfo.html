@@ -1,0 +1,33 @@
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <br />
+        {{ field.label_tag }}:{{ field }}
+        {{ field.errors }}
+    {% endfor %}
+    <input type="submit">
+    <br/>
+</form>
+<div>{{ error }}</div>
+<br />
+<div>
+    {{ querytime }}
+</div>
+<br />
+{% if results %}
+<div>
+    收入汇总:<br />
+    <table border="1">
+        <tr>
+            <th>分区名</th>
+            <th>新增总和</th>
+        </tr>
+    {% for detail in results %}
+        <tr>
+            <td>{{ detail.zonename }}</td>
+            <td>{{ detail.totalnum }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endif %}
