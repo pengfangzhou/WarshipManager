@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dd3452e-4bde-4005-9005-e1fefc6c582f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/dbmodel/front/dao/MailDao.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/dbmodel/front/handlers/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/templates/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/templates/mail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/dbmodel/front/handlers/mail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/dbmodel/front/Config.py" afterPath="$PROJECT_DIR$/server/dbmodel/front/Config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/dbmodel/front/dao/UserDao.py" afterPath="$PROJECT_DIR$/server/dbmodel/front/dao/UserDao.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/dbmodel/front/forms.py" afterPath="$PROJECT_DIR$/server/dbmodel/front/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/templates/index.html" afterPath="$PROJECT_DIR$/server/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/dbmodel/front/memberQuery.py" afterPath="$PROJECT_DIR$/server/dbmodel/front/memberQuery.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/settings.py" afterPath="$PROJECT_DIR$/server/server/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/server/urls.py" afterPath="$PROJECT_DIR$/server/server/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/dbmodel/front/utils.py" afterPath="$PROJECT_DIR$/server/dbmodel/front/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/dbmodel/views.py" afterPath="$PROJECT_DIR$/server/dbmodel/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9dd3452e-4bde-4005-9005-e1fefc6c582f" name="Default" comment="" />
     <ignored path="WarshipManager.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,7 +38,7 @@
       <file leaf-file-name="sqlrun.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/dbmodel/front/sqlrun.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35735294" vertical-offset="783" max-vertical-offset="3645">
+            <state vertical-scroll-proportion="0.3857143" vertical-offset="783" max-vertical-offset="3645">
               <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
               <folding />
             </state>
@@ -104,10 +88,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="403" />
-    <option name="y" value="429" />
+    <option name="x" value="196" />
+    <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="790" />
+    <option name="height" value="740" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -416,8 +400,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="403" y="429" width="1440" height="790" extended-state="6" />
-    <editor active="false" />
+    <frame x="196" y="22" width="1440" height="740" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -676,7 +660,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/dbmodel/front/sqlrun.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35735294" vertical-offset="783" max-vertical-offset="3645">
+        <state vertical-scroll-proportion="0.3857143" vertical-offset="783" max-vertical-offset="3645">
           <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding />
         </state>
