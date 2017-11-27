@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from django.contrib.auth import views as auth_views
 from django.conf.urls import patterns, include, url
 from dbmodel.front.checkDrops import checkDrop
 from dbmodel.front.payQuery import payinfo
@@ -12,6 +13,9 @@ from dbmodel.front.sqlrun import sqlQuery
 from dbmodel.front.UserInfoCount import userinfo
 from dbmodel.views import testprods
 from dbmodel.front.vipcompensation import doCompensation
+from dbmodel import views
+
+from dbmodel.front.handlers import mail
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -22,6 +26,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'server.views.home', name='home'),
     # url(r'^server/', include('server.foo.urls')),
 
+    # url(r'^accounts/login/$', auth_views.login),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
@@ -36,7 +41,12 @@ urlpatterns = patterns('',
     ('^sqlquery/$',sqlQuery),
     ('^info/$',info),
 
-    ('^userinfo/$',userinfo)
+    ('^userinfo/$',userinfo),
+
+    #GM 工具
+    ('^login/$',views.login),
+    ('^mail/$',mail.sendMail),
+
 
     # ('^prods/$',testprods),
     # ('^vipcompensation/$',doCompensation),

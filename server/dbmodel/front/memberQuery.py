@@ -6,8 +6,10 @@ from dbmodel.front.dao import UserDao
 from dbmodel.front.dao import MemberDao
 from dbmodel.front import Config
 
+from dbmodel.front.forms import ZONE_CHOICES
+
 def member(request):
-    # print "member"
+    print "member ZONE_CHOICES[0]: ",ZONE_CHOICES[0]
     if request.method == 'POST':
         form = MemberForm(request.POST)
         if form.is_valid():

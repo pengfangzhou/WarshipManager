@@ -14,6 +14,20 @@ def getByUserid(ip,dbname,userid):
     conn.close()
     return all
 
+#获得所有用户id列表
+def getAllUserids(ip,dbname):
+    conn = psycopg2.connect(database=dbname, user=Config.DATA_USER, password=Config.DATA_PASSWORD, host=ip, port=Config.DATA_PORT)
+    cursor = conn.cursor()
+
+    query = "select g.id from core_user g;"
+    cursor.execute(query)
+    all = cursor.fetchall()
+    # print "all:",all
+
+    conn.commit()
+    conn.close()
+    return all
+
 def getByAllProds(ip,dbname):
     conn = psycopg2.connect(database=dbname, user=Config.DATA_USER, password=Config.DATA_PASSWORD, host=ip, port=Config.DATA_PORT)
     cursor = conn.cursor()

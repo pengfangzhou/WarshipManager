@@ -4,6 +4,7 @@ import time
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+from dbmodel.models import ZoneUrl
 from dbmodel import models
 
 def isPropInProps(cprops):
@@ -31,4 +32,17 @@ def toTime(myDay):
     timeStamp = int(time.mktime(timeArray))
     return timeStamp
 
-
+#获得所有分区
+def getAllZonesChoice():
+    zones = []
+    zoneList = ZoneUrl.objects.all()
+    # print "zoneList:",zoneList
+    for item in zoneList:
+        short = item.short
+        name = item.name
+        ip = item.ip
+        gip = item.gip
+        dbname = item.dbname
+        zones.append({'short':short,'name':name})
+    zones.append({'short':'all','name':u'所有分区'})
+    return zones
