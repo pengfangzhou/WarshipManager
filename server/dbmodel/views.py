@@ -1,3 +1,4 @@
+#encoding=utf-8
 from django.http import HttpResponse
 from django.shortcuts import render
 from dbmodel.models import ZoneUrl
@@ -20,7 +21,15 @@ def update(request):
     return HttpResponse("{\"code\": 0,\"timestamp\": 1492585823}")
 
 def index(request):
-    return render(request,'index.html',{})
+    zoneList = ZoneUrl.objects.all()
+    shortsArr = []
+    for zoneItem in zoneList:
+        rItem = {}
+        rItem['name'] = zoneItem.name
+        rItem['short'] = zoneItem.short
+        shortsArr.append(rItem)
+
+    return render(request,'index.html',{'shorts':shortsArr})
 
 def login(request):
     return render(request,'login.html',{})

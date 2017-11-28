@@ -2,12 +2,20 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>GM</title>
 </head>
 <body>
+    <h2>通用工具</h2>
     <p><a href="mail">GM工具:邮件</a></p>
     <p><a href="payinfo">支付查询</a></p>
     <p><a href="userinfo">用户数统计</a></p>
     <p><a href="/member">个人信息查询</a></p>
+    <p></p>
+    <h2>分区工具</h2>
+    {% if shorts %}
+    {% for item in shorts %}
+    <p><a target="_blank" href="http://gm.{{item.short}}.acgfly.com/admin/">{{item.name}} 活动配置</a></p>
+    {% endfor %}
+    {% endif %}
 </body>
 </html>
