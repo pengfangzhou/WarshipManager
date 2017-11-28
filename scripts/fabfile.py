@@ -100,7 +100,7 @@ def replaceNewConfig(zones):
 def gitClone(zones):
     for zone in zones:
         ser = u'AcgServerS00'+str(zone+1)
-        print "开始处理: ",ser
+        print u"开始处理: ",ser
         with cd('/root/srv/PtAcg/'):
             commandClone = 'git clone ssh://git@d.putaogame.com:21022/AcgServer.git '+ser
             print commandClone
@@ -114,7 +114,7 @@ def gitCommitAndPull(zones):
 
     for zone in zones:
         ser = u'/root/srv/PtAcg/AcgServerS00'+str(zone+1)
-        print "开始处理: ",ser
+        print u"开始处理: ",ser
         with cd(ser):
             run('git commit -am "c"')
             run('git pull')
