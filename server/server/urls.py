@@ -47,6 +47,7 @@ urlpatterns = patterns('',
     ('^login/$',views.login),
     ('^mail/$',mail.sendMail),
 
+    #定时工具
 
     # ('^prods/$',testprods),
     # ('^vipcompensation/$',doCompensation),
