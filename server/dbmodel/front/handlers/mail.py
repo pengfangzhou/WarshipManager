@@ -8,6 +8,7 @@ import json
 import D
 from dbmodel.models import ZoneUrl
 from dbmodel.front import utils
+from dbmodel.models import MailLog
 
 from dbmodel.front.dao import UserDao
 from dbmodel.front.dao import MailDao
@@ -129,6 +130,13 @@ def sendMailToSingleUserSingleZone(zoneItem,to_userid,mail):
 
     mail['to'] = to_userid
     result = MailDao.sendMail(ip=gip,dbname=dbname,sender=mail["sender"],to_id=mail["to"], title=mail["title"], content=mail["content"], awards=mail["jawards"], msg=mail["msg"])
+
+    m = MailLog()
+    m.userid = to_userid
+    m.mail = mail
+    m.zid = zoneName
+    m.save()
+
     return result
 
 
