@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 import json
+import datetime
+import time
 
 import D
 from dbmodel.models import ZoneUrl
@@ -69,27 +71,35 @@ def sendMail(request):
             mail["msg"] = str(current_user_set)
             print "mail: ",mail
 
+            r_msg = u''
+            nowTimeStr = time.strftime('%H:%M:%S',time.localtime(time.time()))
+            print "nowTimeStr:",nowTimeStr
+
             results = None
             if usertype == 'single':
                 #发送给单个用户
                 results = sendMailToSingleUserSingleZone(items[0],mail['to'],mail)
+                r_msg = u'成功发送给:'+mail['to']+u" "+nowTimeStr
+                print "r_msg:",r_msg
             elif usertype == 'all':
                 #发送给所有用户
                 if zoneid == 'all':
                     #发送给所有分区
                     results = sendMailAllZonesAllUsers(mail)
+                    r_msg = u'成功发送给所有分区用户。'+nowTimeStr
                 else:
                     #发送给单个分区所有用户
                     results = sendMailToSingleZoneAllUsers(items[0],mail)
+                    r_msg = u'成功发送给单个分区所有用户。'+items[0].name+u" "+nowTimeStr
 
             if results:
                 print u"邮件发送成功. mail:",mail
-                return HttpResponse(json.dumps(dict(error=u"邮件发送成功")), mimetype="application/json", status=200)
+                return HttpResponse(json.dumps(dict(error=r_msg)), mimetype="application/json", status=200)
             else:
                 print u"------邮件发送不成功. mail:",mail
-                return HttpResponse(json.dumps(dict(error=u"邮件发送不成功")), mimetype="application/json", status=200)
+                return HttpResponse(json.dumps(dict(error=u"邮件发送不成功. "+str(datetime.datetime.now))), mimetype="application/json", status=200)
         else:
-            return HttpResponse(json.dumps(dict(error=u"分区不存在")), mimetype="application/json", status=404)
+            return HttpResponse(json.dumps(dict(error=u"分区不存在"+str(datetime.datetime.now))), mimetype="application/json", status=404)
 
     zones = utils.getAllZonesChoice()
 

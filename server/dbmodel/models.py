@@ -23,17 +23,13 @@ class Props(models.Model):
 
 class MailLog(models.Model):
     id = models.AutoField(primary_key=True)
-    userid = models.CharField(_('Userid'), max_length=40)
-    zid = models.CharField(_('Zid'), max_length=40)
+    userid = models.CharField(max_length=50)
+    zid = models.CharField(max_length=50)
     mail = models.TextField(blank=True)
     created_at = models.DateTimeField(default=datetime.datetime.now)
 
-    class Meta:
-        verbose_name = _('MailLog')
-        verbose_name_plural = _('MailLogs')
-
     def __unicode__(self):
-        return self.user
+        return self.userid
 
 
 
