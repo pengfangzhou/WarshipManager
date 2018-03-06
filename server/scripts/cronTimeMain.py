@@ -7,35 +7,35 @@ PER_PERIOD = 60
 
 def doSth5():
     print('doSth5: ',datetime.datetime.now())
-    os.system("/usr/bin/python /Users/zhoupengfang/Documents/space/warshipSpace/WarshipServer/src/script/cronrun.py 5")
+    os.system("/usr/bin/python /root/srv/PtWarship/WarshipServer001/src/script/cronrun.py 5")
 
     # 假装做这件事情需要1小时
     time.sleep(60*PER_PERIOD)
 
 def doSth9():
     print('doSth9: ',datetime.datetime.now())
-    os.system("/usr/bin/python /Users/zhoupengfang/Documents/space/warshipSpace/WarshipServer/src/script/cronrun.py 9")
+    os.system("/usr/bin/python /root/srv/PtWarship/WarshipServer001/src/script/cronrun.py 9")
 
     # 假装做这件事情需要1小时
     time.sleep(60*PER_PERIOD)
 
 def doSth12():
     print('doSth12: ',datetime.datetime.now())
-    os.system("/usr/bin/python /Users/zhoupengfang/Documents/space/warshipSpace/WarshipServer/src/script/cronrun.py 12")
+    os.system("/usr/bin/python /root/srv/PtWarship/WarshipServer001/src/script/cronrun.py 12")
 
     # 假装做这件事情需要1小时
     time.sleep(60*PER_PERIOD)
 
 def doSth18():
     print('doSth18: ',datetime.datetime.now())
-    os.system("/usr/bin/python /Users/zhoupengfang/Documents/space/warshipSpace/WarshipServer/src/script/cronrun.py 18")
+    os.system("/usr/bin/python /root/srv/PtWarship/WarshipServer001/src/script/cronrun.py 18")
 
     # 假装做这件事情需要1小时
     time.sleep(60*PER_PERIOD)
 
 def doSth21():
     print('doSth21: ',datetime.datetime.now())
-    os.system("/usr/bin/python /Users/zhoupengfang/Documents/space/warshipSpace/WarshipServer/src/script/cronrun.py 21")
+    os.system("/usr/bin/python /root/srv/PtWarship/WarshipServer001/src/script/cronrun.py 21")
 
     # 假装做这件事情需要一分钟
     time.sleep(60*PER_PERIOD)
